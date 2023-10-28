@@ -98,7 +98,7 @@ userRouter.post('/forgotPassword',async(req,res)=>{
             const token=jwt.sign({email:user.email},process.env.JWT_SECRET,{expiresIn:'1d'});
             const link=`${process.env.FRONTEND_URL}/verifyForgotPassword?token=${token}`;
             await transport.sendMail({...mailOptions,
-                subject:"Password reset verification link",
+                subject:"Forgot Password verification link",
                 to:payload.email,
                 text:`Request from the username called ${user.name} Please verify your e-mail
                  address to change the password using these link ${link} `})
