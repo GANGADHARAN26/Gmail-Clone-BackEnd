@@ -116,7 +116,7 @@ userRouter.post('/contact',async(req,res)=>{
     try{
             await transport.sendMail({...mailOptions,
                 subject:payload.subject,
-                text:payload.message})
+                text:payload.email + payload.message})
             res.send({message:" Email has been send successfully "})
         }
     catch(error){console.log(error.message)}
