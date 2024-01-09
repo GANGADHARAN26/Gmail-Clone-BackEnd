@@ -10,7 +10,7 @@ export const transport=nodemailer.createTransport({
 })
 export const mailOptions={
     from:'anubmanickam1972@gmail.com',
-    to:'anbumanickam1972@gmail.com',
+    to:'gangadharana01@gmail.com',
     subject:'Sending email using node js success',
     text:'that was esay'
 };

@@ -110,6 +110,17 @@ userRouter.post('/forgotPassword',async(req,res)=>{
        
     }catch(error){console.log(error.message)}
 })
+//contact
+userRouter.post('/contact',async(req,res)=>{
+    const payload=req.body;
+    try{
+            await transport.sendMail({...mailOptions,
+                subject:payload.subject,
+                text:payload.message})
+            res.send({message:" Email has been send successfully "})
+        }
+    catch(error){console.log(error.message)}
+})
 //verification for the password password
 userRouter.post('/passwordVerify', async(req, res)=>{
     try{ 
